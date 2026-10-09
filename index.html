@@ -16,13 +16,25 @@
 }
 
 body{
-    background:#07111f;
-    color:white;
+    background:#06111f;
+    color:#fff;
     min-height:100vh;
 }
 
+button{
+    border:none;
+    cursor:pointer;
+    font-weight:bold;
+    border-radius:12px;
+    padding:13px 18px;
+    transition:.2s;
+}
+
+button:hover{
+    transform:translateY(-2px);
+}
+
 .container{
-    width:100%;
     max-width:1200px;
     margin:auto;
     padding:25px;
@@ -34,7 +46,7 @@ header{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    margin-bottom:30px;
+    margin-bottom:35px;
 }
 
 .logo{
@@ -43,17 +55,16 @@ header{
     gap:12px;
 }
 
-.logo-icon{
-    width:48px;
-    height:48px;
-    background:#00d4ff;
-    color:#07111f;
-    border-radius:14px;
+.logoIcon{
+    width:50px;
+    height:50px;
+    background:#00c9f5;
+    color:#06111f;
+    border-radius:15px;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:25px;
-    font-weight:bold;
+    font-size:27px;
 }
 
 .logo h1{
@@ -61,13 +72,14 @@ header{
 }
 
 .logo p{
-    color:#7d8da3;
+    color:#7e8ea3;
     font-size:13px;
+    margin-top:3px;
 }
 
-.online{
-    background:#10283a;
-    color:#36e69a;
+.connection{
+    background:#102c38;
+    color:#39e5a0;
     padding:10px 16px;
     border-radius:20px;
     font-size:13px;
@@ -80,12 +92,40 @@ header{
 }
 
 .welcome h2{
-    font-size:30px;
+    font-size:31px;
     margin-bottom:7px;
 }
 
 .welcome p{
-    color:#8291a5;
+    color:#8191a5;
+}
+
+/* MODE */
+
+.mode{
+    background:linear-gradient(135deg,#102b40,#0c1d30);
+    border:1px solid #1c4058;
+    border-radius:20px;
+    padding:20px;
+    margin-bottom:25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.mode h3{
+    margin-bottom:5px;
+}
+
+.mode p{
+    color:#8293a7;
+    font-size:13px;
+}
+
+.mode button{
+    background:#00c9f5;
+    color:#06111f;
 }
 
 /* STATUS */
@@ -97,61 +137,59 @@ header{
     margin-bottom:25px;
 }
 
-.status-card{
+.statusCard{
     background:#0d1c2e;
-    padding:20px;
+    border:1px solid #172d43;
     border-radius:18px;
-    border:1px solid #172c42;
+    padding:20px;
 }
 
-.status-card .icon{
+.statusCard .icon{
     font-size:25px;
-    margin-bottom:10px;
+    margin-bottom:12px;
 }
 
-.status-card h3{
-    font-size:14px;
-    color:#8493a7;
-    margin-bottom:5px;
+.statusCard span{
+    color:#8191a5;
+    font-size:13px;
 }
 
-.status-card p{
-    font-size:20px;
-    font-weight:bold;
+.statusCard strong{
+    display:block;
+    font-size:21px;
+    margin-top:5px;
 }
 
 /* GRID */
 
-.grid{
+.mainGrid{
     display:grid;
     grid-template-columns:2fr 1fr;
     gap:20px;
 }
 
-/* CARDS */
-
 .card{
     background:#0d1c2e;
-    border:1px solid #172c42;
+    border:1px solid #172d43;
     border-radius:20px;
     padding:22px;
     margin-bottom:20px;
 }
 
-.card-title{
+.cardTitle{
     display:flex;
     justify-content:space-between;
     align-items:center;
     margin-bottom:20px;
 }
 
-.card-title h2{
+.cardTitle h2{
     font-size:19px;
 }
 
-.card-title span{
-    color:#728399;
-    font-size:13px;
+.cardTitle span{
+    color:#718298;
+    font-size:12px;
 }
 
 /* ROOMS */
@@ -164,18 +202,18 @@ header{
 
 .room{
     background:#091725;
-    border:1px solid #1a3047;
-    padding:20px;
+    border:1px solid #193047;
     border-radius:17px;
+    padding:19px;
 }
 
-.room-header{
+.roomTop{
     display:flex;
     justify-content:space-between;
-    margin-bottom:18px;
+    align-items:flex-start;
 }
 
-.room-icon{
+.roomIcon{
     font-size:30px;
 }
 
@@ -184,30 +222,43 @@ header{
 }
 
 .room p{
-    color:#73849a;
+    color:#718399;
     font-size:13px;
     margin-top:4px;
 }
 
+.room button{
+    width:100%;
+    margin-top:18px;
+    background:#172c42;
+    color:#fff;
+}
+
+.room button:hover{
+    background:#21415e;
+}
+
+/* TOGGLE */
+
 .toggle{
-    width:48px;
-    height:26px;
-    background:#26384c;
-    border-radius:20px;
+    width:50px;
+    height:28px;
+    background:#26394e;
+    border-radius:30px;
     position:relative;
     cursor:pointer;
 }
 
 .toggle::after{
     content:"";
-    width:20px;
-    height:20px;
-    background:#8795a5;
     position:absolute;
-    top:3px;
-    left:4px;
+    width:21px;
+    height:21px;
     border-radius:50%;
-    transition:.3s;
+    background:#8896a6;
+    left:4px;
+    top:3.5px;
+    transition:.25s;
 }
 
 .toggle.active{
@@ -215,99 +266,58 @@ header{
 }
 
 .toggle.active::after{
-    left:24px;
-    background:white;
-}
-
-/* BUTTONS */
-
-button{
-    border:none;
-    cursor:pointer;
-    border-radius:12px;
-    padding:12px 15px;
-    font-weight:bold;
-    transition:.2s;
-}
-
-button:hover{
-    transform:translateY(-2px);
-}
-
-.primary{
-    background:#00c9f5;
-    color:#06111d;
-}
-
-.secondary{
-    background:#172b40;
-    color:white;
-}
-
-.danger{
-    background:#5d1c2a;
-    color:#ff7187;
-}
-
-.success{
-    background:#123b32;
-    color:#45e8a4;
-}
-
-.buttons{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:10px;
-    margin-top:15px;
+    left:25px;
+    background:#fff;
 }
 
 /* SECURITY */
 
-.security-item{
+.security{
     display:flex;
     justify-content:space-between;
     align-items:center;
     background:#091725;
-    padding:16px;
-    border-radius:13px;
+    border-radius:14px;
+    padding:15px;
     margin-bottom:10px;
 }
 
-.security-info{
+.securityLeft{
     display:flex;
     align-items:center;
     gap:12px;
 }
 
-.security-icon{
+.securityIcon{
     font-size:22px;
 }
 
-.security-info p{
-    color:#7f8fa4;
-    font-size:12px;
+.security small{
+    display:block;
+    color:#74859a;
     margin-top:3px;
 }
 
-/* ALERTS */
+/* BUTTON COLORS */
 
-.alert{
-    padding:14px;
-    border-radius:12px;
-    background:#102237;
-    border-left:4px solid #00c9f5;
-    margin-bottom:10px;
-    font-size:13px;
+.primary{
+    background:#00c9f5;
+    color:#06111f;
 }
 
-.alert.warning{
-    border-left-color:#ffb43b;
-    background:#2b2415;
+.danger{
+    background:#5b1d2b;
+    color:#ff7087;
 }
 
-.alert.danger-alert{
-    border-left-color:#ff526d;
-    background:#2c151d;
+.success{
+    background:#123c32;
+    color:#4ce8a7;
+}
+
+.secondary{
+    background:#172c42;
+    color:#fff;
 }
 
 /* DEMO */
@@ -317,8 +327,9 @@ button:hover{
 }
 
 .demo p{
-    color:#8190a3;
+    color:#8191a5;
     font-size:13px;
+    line-height:1.5;
     margin:10px 0 18px;
 }
 
@@ -327,20 +338,67 @@ button:hover{
     font-size:15px;
 }
 
+/* ALERTS */
+
+.alert{
+    background:#102337;
+    border-left:4px solid #00c9f5;
+    border-radius:10px;
+    padding:13px;
+    margin-bottom:9px;
+    font-size:13px;
+}
+
+.warning{
+    border-left-color:#ffb43b;
+    background:#2a2417;
+}
+
+.dangerAlert{
+    border-left-color:#ff536c;
+    background:#2b161e;
+}
+
+/* PRICES */
+
+.price{
+    text-align:center;
+}
+
+.price h2{
+    font-size:16px;
+}
+
+.price .amount{
+    font-size:29px;
+    font-weight:bold;
+    margin:10px 0;
+}
+
+.price p{
+    color:#8291a5;
+    font-size:13px;
+}
+
+.price button{
+    margin-top:15px;
+    width:100%;
+}
+
 /* TOAST */
 
 .toast{
     position:fixed;
-    bottom:25px;
     right:25px;
-    background:#12263b;
-    border:1px solid #25435e;
+    bottom:25px;
+    background:#10263b;
+    border:1px solid #254761;
     padding:15px 20px;
     border-radius:13px;
     opacity:0;
     transform:translateY(20px);
-    transition:.3s;
     pointer-events:none;
+    transition:.3s;
 }
 
 .toast.show{
@@ -350,30 +408,48 @@ button:hover{
 
 /* RESPONSIVE */
 
-@media(max-width:800px){
+@media(max-width:850px){
 
     .status{
         grid-template-columns:repeat(2,1fr);
     }
 
-    .grid{
+    .mainGrid{
         grid-template-columns:1fr;
     }
 
 }
 
-@media(max-width:500px){
+@media(max-width:600px){
 
     .container{
         padding:15px;
     }
 
-    .rooms{
-        grid-template-columns:1fr;
+    header{
+        align-items:flex-start;
+    }
+
+    .connection{
+        font-size:11px;
+        padding:8px 10px;
     }
 
     .welcome h2{
-        font-size:24px;
+        font-size:25px;
+    }
+
+    .mode{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .mode button{
+        width:100%;
+    }
+
+    .rooms{
+        grid-template-columns:1fr;
     }
 
 }
@@ -381,15 +457,19 @@ button:hover{
 </style>
 </head>
 
+
 <body>
 
 <div class="container">
+
+
+<!-- HEADER -->
 
 <header>
 
 <div class="logo">
 
-<div class="logo-icon">⌂</div>
+<div class="logoIcon">⌂</div>
 
 <div>
 <h1>SmartHome</h1>
@@ -398,18 +478,47 @@ button:hover{
 
 </div>
 
-<div class="online">
+<div class="connection">
 ● Sistema conectado
 </div>
 
 </header>
 
 
+<!-- BIENVENIDA -->
+
 <section class="welcome">
 
 <h2>Buenos días 👋</h2>
 
-<p>Controla y supervisa tu hogar desde un solo lugar.</p>
+<p>
+Controla, automatiza y protege tu hogar desde un solo lugar.
+</p>
+
+</section>
+
+
+<!-- MODO FUERA DE CASA -->
+
+<section class="mode">
+
+<div>
+
+<h3 id="modeTitle">🏠 Hogar protegido</h3>
+
+<p id="modeText">
+Todos los sistemas están funcionando normalmente.
+</p>
+
+</div>
+
+<button
+id="awayButton"
+onclick="toggleAwayMode()">
+
+Activar modo fuera de casa
+
+</button>
 
 </section>
 
@@ -418,66 +527,71 @@ button:hover{
 
 <section class="status">
 
-<div class="status-card">
+
+<div class="statusCard">
 
 <div class="icon">💡</div>
 
-<h3>Luces encendidas</h3>
+<span>Luces encendidas</span>
 
-<p id="lightsStatus">0</p>
+<strong id="lightsStatus">0</strong>
 
 </div>
 
 
-<div class="status-card">
+<div class="statusCard">
 
 <div class="icon">🚪</div>
 
-<h3>Puerta principal</h3>
+<span>Puerta principal</span>
 
-<p id="doorStatus">Cerrada</p>
+<strong id="doorStatus">Cerrada</strong>
 
 </div>
 
 
-<div class="status-card">
+<div class="statusCard">
 
 <div class="icon">🚨</div>
 
-<h3>Alarma</h3>
+<span>Alarma</span>
 
-<p id="alarmStatus">Desactivada</p>
+<strong id="alarmStatus">Desactivada</strong>
 
 </div>
 
 
-<div class="status-card">
+<div class="statusCard">
 
 <div class="icon">👁️</div>
 
-<h3>Movimiento</h3>
+<span>Movimiento</span>
 
-<p id="motionStatus">Normal</p>
+<strong id="motionStatus">Normal</strong>
 
 </div>
+
 
 </section>
 
 
-<div class="grid">
+<div class="mainGrid">
 
 
-<!-- IZQUIERDA -->
+<!-- COLUMNA PRINCIPAL -->
 
 <div>
 
+
+<!-- HABITACIONES -->
+
 <div class="card">
 
-<div class="card-title">
+<div class="cardTitle">
 
-<h2>🏠 Habitaciones</h2>
+<h2>🏠 Mi hogar</h2>
 
-<span>Control de iluminación</span>
+<span>Control inteligente</span>
 
 </div>
 
@@ -489,11 +603,11 @@ button:hover{
 
 <div class="room">
 
-<div class="room-header">
+<div class="roomTop">
 
 <div>
 
-<div class="room-icon">🛏️</div>
+<div class="roomIcon">🛏️</div>
 
 <h3>Habitación</h3>
 
@@ -516,11 +630,11 @@ onclick="toggleLight('bed')">
 
 <div class="room">
 
-<div class="room-header">
+<div class="roomTop">
 
 <div>
 
-<div class="room-icon">🛋️</div>
+<div class="roomIcon">🛋️</div>
 
 <h3>Sala</h3>
 
@@ -543,11 +657,11 @@ onclick="toggleLight('living')">
 
 <div class="room">
 
-<div class="room-header">
+<div class="roomTop">
 
 <div>
 
-<div class="room-icon">🍳</div>
+<div class="roomIcon">🍳</div>
 
 <h3>Cocina</h3>
 
@@ -559,11 +673,9 @@ onclick="toggleLight('living')">
 
 </div>
 
-<button
-class="secondary"
-onclick="simulateSmoke()">
+<button onclick="simulateSmoke()">
 
-🔥 Simular humo/gas
+🔥 Simular humo / gas
 
 </button>
 
@@ -574,11 +686,11 @@ onclick="simulateSmoke()">
 
 <div class="room">
 
-<div class="room-header">
+<div class="roomTop">
 
 <div>
 
-<div class="room-icon">🚪</div>
+<div class="roomIcon">🚪</div>
 
 <h3>Entrada</h3>
 
@@ -591,7 +703,6 @@ onclick="simulateSmoke()">
 </div>
 
 <button
-class="secondary"
 onclick="toggleDoor()"
 id="doorButton">
 
@@ -600,6 +711,7 @@ Abrir puerta
 </button>
 
 </div>
+
 
 </div>
 
@@ -610,26 +722,26 @@ Abrir puerta
 
 <div class="card">
 
-<div class="card-title">
+<div class="cardTitle">
 
 <h2>🛡️ Seguridad</h2>
 
-<span>Monitoreo en tiempo real</span>
+<span>Monitoreo</span>
 
 </div>
 
 
-<div class="security-item">
+<div class="security">
 
-<div class="security-info">
+<div class="securityLeft">
 
-<div class="security-icon">👁️</div>
+<div class="securityIcon">👁️</div>
 
 <div>
 
 <strong>Sensor de movimiento</strong>
 
-<p>Sala</p>
+<small>Sala</small>
 
 </div>
 
@@ -646,17 +758,19 @@ Simular
 </div>
 
 
-<div class="security-item">
+<div class="security">
 
-<div class="security-info">
+<div class="securityLeft">
 
-<div class="security-icon">🚨</div>
+<div class="securityIcon">🚨</div>
 
 <div>
 
 <strong>Alarma general</strong>
 
-<p id="alarmText">Sistema desactivado</p>
+<small id="alarmText">
+Sistema desactivado
+</small>
 
 </div>
 
@@ -664,8 +778,8 @@ Simular
 
 <button
 class="danger"
-onclick="toggleAlarm()"
-id="alarmButton">
+id="alarmButton"
+onclick="toggleAlarm()">
 
 Activar
 
@@ -673,12 +787,14 @@ Activar
 
 </div>
 
-</div>
 
 </div>
 
 
-<!-- DERECHA -->
+</div>
+
+
+<!-- COLUMNA DERECHA -->
 
 <div>
 
@@ -687,15 +803,15 @@ Activar
 
 <div class="card demo">
 
-<div class="card-title">
+<div class="cardTitle">
 
-<h2>🎬 Demostración</h2>
+<h2>🎬 Demo SmartHome</h2>
 
 </div>
 
 <p>
 
-Muestra el funcionamiento de SmartHome automáticamente.
+Muestra automáticamente cómo responde el hogar ante diferentes situaciones.
 
 </p>
 
@@ -703,20 +819,22 @@ Muestra el funcionamiento de SmartHome automáticamente.
 class="primary"
 onclick="runDemo()">
 
-▶ Ejecutar demostración
+▶ Iniciar demostración
 
 </button>
 
 </div>
 
 
-<!-- ALERTAS -->
+<!-- HISTORIAL -->
 
 <div class="card">
 
-<div class="card-title">
+<div class="cardTitle">
 
-<h2>🔔 Actividad reciente</h2>
+<h2>🔔 Historial</h2>
+
+<span>Actividad reciente</span>
 
 </div>
 
@@ -724,7 +842,7 @@ onclick="runDemo()">
 
 <div class="alert">
 
-Sistema iniciado correctamente.
+🟢 Sistema iniciado correctamente.
 
 </div>
 
@@ -733,25 +851,31 @@ Sistema iniciado correctamente.
 </div>
 
 
-<!-- CASA -->
+<!-- PRODUCTO -->
 
-<div class="card">
+<div class="card price">
 
-<div class="card-title">
+<h2>SmartHome Kit</h2>
 
-<h2>📊 Estado de la casa</h2>
+<div class="amount">
+$399.900
+</div>
+
+<p>
+Kit inicial para convertir una vivienda tradicional
+en un hogar inteligente.
+</p>
+
+<button
+class="primary"
+onclick="showToast('📦 SmartHome Kit seleccionado')">
+
+Conocer el kit
+
+</button>
 
 </div>
 
-<div class="alert">
-
-🟢 Todos los sistemas funcionan correctamente.
-
-</div>
-
-<div class="alert">
-
-📡 ESP32 conectado a Wi-Fi.
 
 </div>
 
@@ -760,10 +884,8 @@ Sistema iniciado correctamente.
 
 </div>
 
-</div>
 
-</div>
-
+<!-- TOAST -->
 
 <div
 class="toast"
@@ -776,19 +898,20 @@ SmartHome
 
 <script>
 
-let bedOn = false;
-let livingOn = false;
-let doorOpen = false;
-let alarmOn = false;
+let bedOn=false;
+let livingOn=false;
+let doorOpen=false;
+let alarmOn=false;
+let awayMode=false;
 
 
 /* TOAST */
 
 function showToast(message){
 
-const toast = document.getElementById("toast");
+const toast=document.getElementById("toast");
 
-toast.innerText = message;
+toast.innerText=message;
 
 toast.classList.add("show");
 
@@ -801,23 +924,41 @@ toast.classList.remove("show");
 }
 
 
-/* ALERTA */
+/* HORA */
+
+function getTime(){
+
+return new Date().toLocaleTimeString(
+"es-CO",
+{
+hour:"2-digit",
+minute:"2-digit"
+}
+);
+
+}
+
+
+/* HISTORIAL */
 
 function addAlert(message,type="normal"){
 
-const alerts = document.getElementById("alerts");
+const alerts=document.getElementById("alerts");
 
-const div = document.createElement("div");
+const div=document.createElement("div");
 
-div.className = "alert";
+div.className="alert";
 
-if(type==="warning")
+if(type==="warning"){
 div.classList.add("warning");
+}
 
-if(type==="danger")
-div.classList.add("danger-alert");
+if(type==="danger"){
+div.classList.add("dangerAlert");
+}
 
-div.innerHTML = message;
+div.innerHTML=
+"<strong>"+getTime()+"</strong> — "+message;
 
 alerts.prepend(div);
 
@@ -830,7 +971,7 @@ function toggleLight(room){
 
 if(room==="bed"){
 
-bedOn = !bedOn;
+bedOn=!bedOn;
 
 document
 .getElementById("bedToggle")
@@ -838,15 +979,21 @@ document
 
 showToast(
 bedOn
-? "💡 Luz de habitación encendida"
-: "💡 Luz de habitación apagada"
+?"💡 Habitación encendida"
+:"💡 Habitación apagada"
+);
+
+addAlert(
+bedOn
+?"💡 Luz de habitación encendida."
+:"💡 Luz de habitación apagada."
 );
 
 }
 
 if(room==="living"){
 
-livingOn = !livingOn;
+livingOn=!livingOn;
 
 document
 .getElementById("livingToggle")
@@ -854,8 +1001,14 @@ document
 
 showToast(
 livingOn
-? "💡 Luz de sala encendida"
-: "💡 Luz de sala apagada"
+?"💡 Sala encendida"
+:"💡 Sala apagada"
+);
+
+addAlert(
+livingOn
+?"💡 Luz de sala encendida."
+:"💡 Luz de sala apagada."
 );
 
 }
@@ -865,17 +1018,19 @@ updateLights();
 }
 
 
-/* CONTADOR LUCES */
+/* CONTADOR */
 
 function updateLights(){
 
-let count = 0;
+let count=0;
 
-if(bedOn) count++;
+if(bedOn)count++;
 
-if(livingOn) count++;
+if(livingOn)count++;
 
-document.getElementById("lightsStatus").innerText = count;
+document.getElementById(
+"lightsStatus"
+).innerText=count;
 
 }
 
@@ -884,36 +1039,39 @@ document.getElementById("lightsStatus").innerText = count;
 
 function toggleDoor(){
 
-doorOpen = !doorOpen;
-
-const status =
-document.getElementById("doorStatus");
-
-const button =
-document.getElementById("doorButton");
-
-const icon =
-document.getElementById("lockIcon");
+doorOpen=!doorOpen;
 
 if(doorOpen){
 
-status.innerText="Abierta";
+document.getElementById(
+"doorStatus"
+).innerText="Abierta";
 
-button.innerText="Cerrar puerta";
+document.getElementById(
+"doorButton"
+).innerText="Cerrar puerta";
 
-icon.innerText="🔓";
+document.getElementById(
+"lockIcon"
+).innerText="🔓";
 
-showToast("🚪 Puerta desbloqueada");
+showToast("🔓 Puerta desbloqueada");
 
 addAlert("🚪 Puerta principal abierta.");
 
 }else{
 
-status.innerText="Cerrada";
+document.getElementById(
+"doorStatus"
+).innerText="Cerrada";
 
-button.innerText="Abrir puerta";
+document.getElementById(
+"doorButton"
+).innerText="Abrir puerta";
 
-icon.innerText="🔒";
+document.getElementById(
+"lockIcon"
+).innerText="🔒";
 
 showToast("🔒 Puerta asegurada");
 
@@ -928,16 +1086,17 @@ addAlert("🔒 Puerta principal cerrada.");
 
 function toggleAlarm(){
 
-alarmOn = !alarmOn;
+alarmOn=!alarmOn;
 
-const status =
+const status=
 document.getElementById("alarmStatus");
 
-const text =
+const text=
 document.getElementById("alarmText");
 
-const button =
+const button=
 document.getElementById("alarmButton");
+
 
 if(alarmOn){
 
@@ -968,6 +1127,10 @@ button.className="danger";
 
 showToast("Alarma desactivada");
 
+addAlert(
+"Alarma desactivada."
+);
+
 }
 
 }
@@ -977,19 +1140,19 @@ showToast("Alarma desactivada");
 
 function simulateMotion(){
 
-document
-.getElementById("motionStatus")
-.innerText="Detectado";
+document.getElementById(
+"motionStatus"
+).innerText="Detectado";
 
 showToast("👁️ Movimiento detectado");
 
 addAlert(
-"👁️ Movimiento detectado en la sala.",
+"👁️ Movimiento detectado en sala.",
 "warning"
 );
 
 
-/* Encender sala automáticamente */
+/* AUTOMÁTICO */
 
 if(!livingOn){
 
@@ -1002,16 +1165,16 @@ document
 updateLights();
 
 addAlert(
-"💡 Luz de sala encendida automáticamente."
+"💡 SmartHome encendió automáticamente la luz de sala."
 );
 
 }
 
 setTimeout(()=>{
 
-document
-.getElementById("motionStatus")
-.innerText="Normal";
+document.getElementById(
+"motionStatus"
+).innerText="Normal";
 
 },4000);
 
@@ -1022,7 +1185,7 @@ document
 
 function simulateSmoke(){
 
-showToast("🔥 ¡Alerta ambiental!");
+showToast("🔥 Alerta ambiental");
 
 addAlert(
 "🔥 Posible humo/gas detectado en cocina.",
@@ -1033,38 +1196,154 @@ if(!alarmOn){
 
 alarmOn=true;
 
-document
-.getElementById("alarmStatus")
-.innerText="Activada";
+document.getElementById(
+"alarmStatus"
+).innerText="Activada";
 
-document
-.getElementById("alarmText")
-.innerText="Alerta activa";
+document.getElementById(
+"alarmText"
+).innerText="Alerta activa";
 
-document
-.getElementById("alarmButton")
-.innerText="Desactivar";
+document.getElementById(
+"alarmButton"
+).innerText="Desactivar";
 
-document
-.getElementById("alarmButton")
-.className="success";
+document.getElementById(
+"alarmButton"
+).className="success";
+
+showToast("🚨 Alarma activada automáticamente");
 
 }
 
 }
 
 
-/* DEMOSTRACIÓN AUTOMÁTICA */
+/* MODO FUERA DE CASA */
+
+function toggleAwayMode(){
+
+awayMode=!awayMode;
+
+const title=
+document.getElementById("modeTitle");
+
+const text=
+document.getElementById("modeText");
+
+const button=
+document.getElementById("awayButton");
+
+
+if(awayMode){
+
+/* APAGAR LUCES */
+
+bedOn=false;
+livingOn=false;
+
+document
+.getElementById("bedToggle")
+.classList.remove("active");
+
+document
+.getElementById("livingToggle")
+.classList.remove("active");
+
+updateLights();
+
+
+/* CERRAR PUERTA */
+
+doorOpen=false;
+
+document.getElementById(
+"doorStatus"
+).innerText="Cerrada";
+
+document.getElementById(
+"doorButton"
+).innerText="Abrir puerta";
+
+document.getElementById(
+"lockIcon"
+).innerText="🔒";
+
+
+/* ALARMA */
+
+alarmOn=true;
+
+document.getElementById(
+"alarmStatus"
+).innerText="Activada";
+
+document.getElementById(
+"alarmText"
+).innerText="Sistema protegido";
+
+document.getElementById(
+"alarmButton"
+).innerText="Desactivar";
+
+document.getElementById(
+"alarmButton"
+).className="success";
+
+
+title.innerText="🛡️ Modo fuera de casa activo";
+
+text.innerText=
+"Tu hogar está protegido y monitoreado.";
+
+button.innerText=
+"Desactivar modo fuera de casa";
+
+
+showToast("🏠 Modo fuera de casa activado");
+
+addAlert(
+"🛡️ Modo fuera de casa activado."
+);
+
+}else{
+
+title.innerText="🏠 Hogar protegido";
+
+text.innerText=
+"Todos los sistemas están funcionando normalmente.";
+
+button.innerText=
+"Activar modo fuera de casa";
+
+showToast("🏠 Modo hogar activado");
+
+addAlert(
+"🏠 Modo hogar activado."
+);
+
+}
+
+}
+
+
+/* DEMOSTRACIÓN */
 
 function runDemo(){
 
 showToast("🎬 Iniciando demostración...");
 
+
 setTimeout(()=>{
 
 addAlert(
-"👁️ Movimiento detectado en sala."
+"👁️ Movimiento detectado en sala.",
+"warning"
 );
+
+document.getElementById(
+"motionStatus"
+).innerText="Detectado";
 
 livingOn=true;
 
@@ -1073,10 +1352,6 @@ document
 .classList.add("active");
 
 updateLights();
-
-document
-.getElementById("motionStatus")
-.innerText="Detectado";
 
 },1000);
 
@@ -1093,27 +1368,27 @@ addAlert(
 setTimeout(()=>{
 
 addAlert(
-"🔥 Simulación: sensor detecta humo en cocina.",
+"🔥 Sensor ambiental detectó humo/gas.",
 "danger"
 );
 
 alarmOn=true;
 
-document
-.getElementById("alarmStatus")
-.innerText="Activada";
+document.getElementById(
+"alarmStatus"
+).innerText="Activada";
 
-document
-.getElementById("alarmText")
-.innerText="Alerta activa";
+document.getElementById(
+"alarmText"
+).innerText="Alerta activa";
 
-document
-.getElementById("alarmButton")
-.innerText="Desactivar";
+document.getElementById(
+"alarmButton"
+).innerText="Desactivar";
 
-document
-.getElementById("alarmButton")
-.className="success";
+document.getElementById(
+"alarmButton"
+).className="success";
 
 },4000);
 
@@ -1122,34 +1397,88 @@ setTimeout(()=>{
 
 doorOpen=true;
 
-document
-.getElementById("doorStatus")
-.innerText="Abierta";
+document.getElementById(
+"doorStatus"
+).innerText="Abierta";
 
-document
-.getElementById("doorButton")
-.innerText="Cerrar puerta";
+document.getElementById(
+"doorButton"
+).innerText="Cerrar puerta";
 
-document
-.getElementById("lockIcon")
-.innerText="🔓";
+document.getElementById(
+"lockIcon"
+).innerText="🔓";
 
 addAlert(
-"🔓 Cerradura inteligente desbloqueada desde la aplicación."
+"🔓 Cerradura inteligente desbloqueada."
 );
 
-},6000);
+},5500);
 
 
 setTimeout(()=>{
 
-showToast("✅ Demostración completada");
+awayMode=true;
+
+bedOn=false;
+livingOn=false;
 
 document
-.getElementById("motionStatus")
-.innerText="Normal";
+.getElementById("bedToggle")
+.classList.remove("active");
 
-},8000);
+document
+.getElementById("livingToggle")
+.classList.remove("active");
+
+updateLights();
+
+doorOpen=false;
+
+document.getElementById(
+"doorStatus"
+).innerText="Cerrada";
+
+document.getElementById(
+"doorButton"
+).innerText="Abrir puerta";
+
+document.getElementById(
+"lockIcon"
+).innerText="🔒";
+
+addAlert(
+"🛡️ Modo fuera de casa activado."
+);
+
+document.getElementById(
+"modeTitle"
+).innerText="🛡️ Modo fuera de casa activo";
+
+document.getElementById(
+"modeText"
+).innerText=
+"Tu hogar está protegido y monitoreado.";
+
+document.getElementById(
+"awayButton"
+).innerText=
+"Desactivar modo fuera de casa";
+
+},7000);
+
+
+setTimeout(()=>{
+
+document.getElementById(
+"motionStatus"
+).innerText="Normal";
+
+showToast(
+"✅ Demostración completada"
+);
+
+},9000);
 
 }
 
